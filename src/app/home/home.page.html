@@ -1,12 +1,22 @@
 <ion-content [fullscreen]="true">
 
-<ng-container *ngFor="let livro of this.Livros">
-<h1>{{ livro.titulo }}</h1>
-
-</ng-container>
-<ng-container *ngFor="let categoria of this.libro.categoria">
-<marquee">{{categoria.nome}}</marquee>
-
-</ng-container>
+<ion-row class="ion-justify-content-center">
+    <ion-col size="4">
+        <ion-card>
+            <ion-card-content>
+                {{this.veiculo.modelo}}
+                <ion-input  [(ngModel)]="this.veiculo.modelo" label="modelo" labelPlacement="stacked"></ion-input>
+                <ion-input [(ngModel)]="this.veiculo.marca" label="marca" labelPlacement="stacked"></ion-input>
+                <ion-input [(ngModel)]="this.veiculo.cor" label="cor" labelPlacement="stacked"></ion-input>
+                <ion-button color="primary" fill="outline" (click)="this.adicionar()">Adicionar</ion-button>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+    <ion-col size="4">
+       <ion-container *ngFor="let veiculo of this.concessionaria" > 
+        <ion-item> {{veiculo.modelo}} - {{veiculo.marca}} - {{veiculo.cor}} - {{veiculo.com}}</ion-item>
+       </ion-container>
+    </ion-col>
+</ion-row>
 
 </ion-content>
