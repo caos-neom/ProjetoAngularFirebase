@@ -1,6 +1,11 @@
+#img {
+  background: url('./ImagemFundo.jpg');
+  background-size: cover;
+   height: 100vh;
+}
 
 ion-content {
-  --background: #f5f5f5;
+  --background: transparent;
 }
 
 
